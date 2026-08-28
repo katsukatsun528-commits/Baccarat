@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="罫線帳">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>罫線帳 — Baccarat Ledger</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Zen Kaku Gothic New', sans-serif; background: #062A21; }
+  .brb-scroll::-webkit-scrollbar { height: 6px; }
+  .brb-scroll::-webkit-scrollbar-thumb { background: #8E7420; border-radius: 3px; }
+  .brb-loading { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #CFC6A6; font-family: sans-serif; text-align: center; padding: 24px; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div id="root"><div class="brb-loading" id="brb-boot-msg">読み込み中…</div></div>
+
+<script>
+  function brbBootFail(msg) {
+    var root = document.getElementById('root');
+    if (root) {
+      root.innerHTML = '<div class="brb-loading">⚠ ' + msg + '<br><span style="font-size:12px;opacity:0.8;margin-top:8px;display:block;">通信環境を確認して、リロードしてください。</span></div>';
+    }
+  }
+  window._brbBootTimer = setTimeout(function () {
+    var el = document.getElementById('brb-boot-msg');
+    if (el) brbBootFail('読み込みに時間がかかっています');
+  }, 8000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" onerror="brbBootFail('Reactの読み込みに失敗しました')"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" onerror="brbBootFail('ReactDOMの読み込みに失敗しました')"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js" onerror="brbBootFail('Babelの読み込みに失敗しました')"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef } = React;
+
+// ---- palette / tokens -------------------------------------------------
+const INK = {
+  feltDark: "#062A21",
+  felt: "#0B3D2E",
+  feltLight: "#134A38",
+  paper: "#F4EEDB",
+  paperShadow: "#E4DAB8",
+  brass: "#C9A227",
+  brassDim: "#8E7420",
+  banker: "#2C5F8A",
+  bankerDeep: "#1E4463",
+  player: "#B23A2E",
+  playerDeep: "#7C271E",
+  tie: "#3F8F5E",
+  cream: "#F4EEDB",
+  creamDim: "#CFC6A6",
+  win: "#C9A227",
+};
+
+const MAX_ROWS = 6;
+const APP_VERSION = "1.2.0";
+const APP_VERSION_DATE = "2026-08-14";
+const CURRENCY_CONFIG = {
+  KRW: { unit: "ウォン", presets: [10000, 30000, 50000, 100000], step: 10000 },
+  JPY: { unit: "円", presets: [1000, 3000, 5000, 10000], step: 1000 },
+  USD: { unit: "ドル", presets: [10, 30, 50, 100], step: 10 },
+};
+
+// ---- pure helpers -------------------------------------------------------
+function outcomeFor(h, settings) {
+  if (!h.bet) return { result: null, delta: 0 };
+  const amt = h.betAmount || 0;
+  if (h.bet === h.type) {
+    if (h.bet === "B") {
+      // Banker-6 rule: a Banker win by exactly 6 pays only half, and this
+      // supersedes the normal commission math (that's the whole point of the rule).
+      const delta = h.banker6 ? amt * 0.5 : (settings.commission ? amt * 0.95 : amt);
+      return { result: "win", delta };
+    }
+    if (h.bet === "P") return { result: "win", delta: amt };
+    if (h.bet === "T") return { result: "win", delta: amt * settings.tiePayout };
+  }
+  if (h.type === "T" && h.bet !== "T") return { result: "push", delta: 0 };
+  return { result: "lose", delta: -amt };
+}
+
+function computeBigRoad(history, settings) {
+  const cells = {};
+  let col = -1, row = -1, lastType = null, started = false, leadingTies = 0, maxCol = -1;
+  for (const h of history) {
+    const outcome = outcomeFor(h, settings).result;
+    if (h.type === "T") {
+      if (!started) { leadingTies += 1; continue; }
+      const key = `${col}-${row}`;
+      cells[key].ties += 1;
+      cells[key].tieOutcome = outcome;
+      continue;
+    }
+    if (!started) { col = 0; row = 0; started = true; }
+    else if (h.type === lastType) { if (row + 1 < MAX_ROWS) row += 1; else col += 1; }
+    else { col += 1; row = 0; }
+    cells[`${col}-${row}`] = { type: h.type, ties: 0, banker6: h.banker6, outcome, tieOutcome: null };
+    lastType = h.type;
+    if (col > maxCol) maxCol = col;
+  }
+  return { cells, cols: maxCol + 1, leadingTies };
+}
+
+function computeBeadPlate(history) {
+  return history.map((h, i) => ({ ...h, col: Math.floor(i / MAX_ROWS), row: i % MAX_ROWS }));
+}
+
+function computeStreak(history) {
+  const nonTie = history.filter((h) => h.type !== "T");
+  if (nonTie.length === 0) return { type: null, count: 0 };
+  const last = nonTie[nonTie.length - 1].type;
+  let count = 1;
+  for (let i = nonTie.length - 2; i >= 0; i--) { if (nonTie[i].type === last) count += 1; else break; }
+  return { type: last, count };
+}
+
+function computeSelfStats(history, settings) {
+  let wins = 0, losses = 0, pushes = 0, net = 0;
+  const outcomes = [];
+  for (const h of history) {
+    const o = outcomeFor(h, settings);
+    if (o.result === "win") wins += 1;
+    else if (o.result === "lose") losses += 1;
+    else if (o.result === "push") pushes += 1;
+    net += o.delta;
+    if (o.result) outcomes.push(o.result);
+  }
+  let streakCount = 0, streakType = null;
+  for (let i = outcomes.length - 1; i >= 0; i--) {
+    if (outcomes[i] === "push") continue;
+    if (streakType === null) { streakType = outcomes[i]; streakCount = 1; }
+    else if (outcomes[i] === streakType) streakCount += 1;
+    else break;
+  }
+  return { wins, losses, pushes, net, streakCount, streakType };
+}
+
+function computeBetTotals(history) {
+  let totalBets = 0, totalWagered = 0;
+  for (const h of history) {
+    if (h.bet) { totalBets += 1; totalWagered += h.betAmount || 0; }
+  }
+  return { totalBets, totalWagered };
+}
+
+function computeRecentStats(history, n) {
+  const recent = history.slice(-n);
+  const b = recent.filter((h) => h.type === "B").length;
+  const p = recent.filter((h) => h.type === "P").length;
+  const t = recent.filter((h) => h.type === "T").length;
+  return { b, p, t, total: recent.length };
+}
+
+// ---- derived roads --------------------------------------------------
+function computeRuns(history) {
+  const runs = [];
+  let lastType = null;
+  for (const h of history) {
+    if (h.type === "T") continue;
+    if (h.type === lastType) runs[runs.length - 1].length += 1;
+    else { runs.push({ type: h.type, length: 1 }); lastType = h.type; }
+  }
+  return runs;
+}
+function deriveMarkers(runs, k) {
+  const markers = [];
+  for (let i = 0; i < runs.length; i++) {
+    const len = runs[i].length;
+    for (let j = 0; j < len; j++) {
+      if (j === 0) { if (i >= k + 1) { const a = runs[i - k].length, b = runs[i - k - 1].length; markers.push(a === b ? "R" : "N"); } }
+      else { if (i >= k) { const refLen = runs[i - k].length; markers.push(refLen > j ? "R" : "N"); } }
+    }
+  }
+  return markers;
+}
+function layoutRoad(markers) {
+  const cells = {};
+  let col = -1, row = -1, lastType = null, started = false, maxCol = -1;
+  for (const t of markers) {
+    if (!started) { col = 0; row = 0; started = true; }
+    else if (t === lastType) { if (row + 1 < MAX_ROWS) row += 1; else col += 1; }
+    else { col += 1; row = 0; }
+    cells[`${col}-${row}`] = { type: t };
+    lastType = t;
+    if (col > maxCol) maxCol = col;
+  }
+  return { cells, cols: maxCol + 1 };
+}
+function computeDerivedRoads(history) {
+  const runs = computeRuns(history);
+  return {
+    bigEye: layoutRoad(deriveMarkers(runs, 1)),
+    smallRoad: layoutRoad(deriveMarkers(runs, 2)),
+    cockroach: layoutRoad(deriveMarkers(runs, 3)),
+  };
+}
+
+// 標準的な8デッキシューの理論出現率(参考値)
+const THEORETICAL_PCT = { B: 45.86, P: 44.62, T: 9.52 };
+
+// 特定の局(トリガー)の直後に何が出たかの分布(B/P/T)。「バンカー6の次」「タイの次」などに使う。
+function computeFollowingStats(history, predicateFn) {
+  let b = 0, p = 0, t = 0, total = 0;
+  for (let i = 0; i < history.length - 1; i++) {
+    if (predicateFn(history[i])) {
+      const next = history[i + 1];
+      if (next.type === "B") b += 1;
+      else if (next.type === "P") p += 1;
+      else t += 1;
+      total += 1;
+    }
+  }
+  return { b, p, t, total };
+}
+
+// 連続数が N 以上まで伸びた割合(このシューの連の長さの分布)
+function computeStreakContinuation(history) {
+  const runs = computeRuns(history);
+  const total = runs.length;
+  const levels = [];
+  for (let n = 2; n <= 6; n++) {
+    const count = runs.filter((r) => r.length >= n).length;
+    levels.push({ n, count, pct: total ? (count / total) * 100 : 0 });
+  }
+  return { total, levels };
+}
+
+function computeTableStats(history) {
+  const runs = computeRuns(history); // ties excluded, same as derived roads
+  const totalRuns = runs.length;
+  const avgStreak = totalRuns ? runs.reduce((s, r) => s + r.length, 0) / totalRuns : 0;
+  const dragonCount = runs.filter((r) => r.length >= 6).length;
+  const chopCount = runs.filter((r) => r.length === 1).length;
+  const chopRate = totalRuns ? (chopCount / totalRuns) * 100 : 0;
+
+  const total = history.length;
+  const bWins = history.filter((h) => h.type === "B").length;
+  const bPct = total ? (bWins / total) * 100 : 0;
+  const pPct = total ? (history.filter((h) => h.type === "P").length / total) * 100 : 0;
+  const tPct = total ? (history.filter((h) => h.type === "T").length / total) * 100 : 0;
+
+  const banker6Count = history.filter((h) => h.banker6).length;
+  const banker6RateOfTotal = total ? (banker6Count / total) * 100 : 0;
+  const banker6RateOfBankerWins = bWins ? (banker6Count / bWins) * 100 : 0;
+
+  return {
+    avgStreak, dragonCount, chopRate, totalRuns,
+    bPct, pPct, tPct,
+    bDiff: bPct - THEORETICAL_PCT.B,
+    pDiff: pPct - THEORETICAL_PCT.P,
+    tDiff: tPct - THEORETICAL_PCT.T,
+    banker6Count, banker6RateOfTotal, banker6RateOfBankerWins,
+  };
+}
+
+// ---- canvas image export helpers -------------------------------------------------------
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+function drawRoadCellCanvas(ctx, cell, x, y, size) {
+  ctx.strokeStyle = INK.paperShadow;
+  ctx.lineWidth = 1;
+  ctx.strokeRect(x, y, size, size);
+  if (!cell) return;
+  const color = cell.type === "B" ? INK.banker : INK.player;
+  const isWin = cell.outcome === "win";
+  const fill = isWin ? color : null;
+  const textColor = isWin ? INK.paper : color;
+  const cx = x + size / 2, cy = y + size / 2, r = size * 0.34;
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = color;
+  ctx.stroke();
+  ctx.fillStyle = textColor;
+  ctx.font = "bold 12px 'JetBrains Mono', monospace";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(cell.type, cx, cy + 1);
+  if (cell.ties > 0) {
+    const tieWin = cell.tieOutcome === "win";
+    const bx = x + size - 6, by = y + size - 6, br = 7;
+    ctx.beginPath();
+    ctx.arc(bx, by, br, 0, Math.PI * 2);
+    ctx.fillStyle = tieWin ? INK.tie : INK.paper;
+    ctx.fill();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = INK.tie;
+    ctx.stroke();
+    ctx.fillStyle = tieWin ? INK.paper : INK.tie;
+    ctx.font = "bold 8px 'JetBrains Mono', monospace";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(cell.ties > 1 ? `T${cell.ties}` : "T", bx, by + 0.5);
+  }
+  if (cell.banker6) {
+    const gx = x + 6, gy = y + 6, gr = 7;
+    ctx.beginPath();
+    ctx.arc(gx, gy, gr, 0, Math.PI * 2);
+    ctx.fillStyle = INK.brass;
+    ctx.fill();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = INK.feltDark;
+    ctx.stroke();
+    ctx.fillStyle = INK.feltDark;
+    ctx.font = "bold 9px 'JetBrains Mono', monospace";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("⑥", gx, gy + 0.5);
+  }
+}
+
+// ---- small UI atoms -------------------------------------------------------
+function MiniRecentBar({ label, stats }) {
+  const { b, p, t, total } = stats;
+  const bPct = total ? (b / total) * 100 : 0;
+  const pPct = total ? (p / total) * 100 : 0;
+  const tPct = total ? (t / total) * 100 : 0;
+  return (
+    <div style={{ flex: 1 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 2 }}>
+        <span style={{ fontSize: 16, color: INK.creamDim }}>{label}</span>
+        <span style={{ fontSize: 16, fontFamily: "'JetBrains Mono', monospace", color: INK.creamDim }}>{total}件</span>
+      </div>
+      <div style={{ display: "flex", width: "100%", height: 16, borderRadius: 5, overflow: "hidden", background: "rgba(255,255,255,0.08)" }}>
+        {total === 0 ? (
+          <div style={{ flex: 1 }} />
+        ) : (
+          <>
+            {b > 0 && <div style={{ width: `${bPct}%`, background: INK.banker }} />}
+            {p > 0 && <div style={{ width: `${pPct}%`, background: INK.player }} />}
+            {t > 0 && <div style={{ width: `${tPct}%`, background: INK.tie }} />}
+          </>
+        )}
+      </div>
+      <div style={{ display: "flex", gap: 6, marginTop: 2 }}>
+        <span style={{ fontSize: 16, fontFamily: "'JetBrains Mono', monospace", color: INK.banker }}>B{b}</span>
+        <span style={{ fontSize: 16, fontFamily: "'JetBrains Mono', monospace", color: INK.player }}>P{p}</span>
+        <span style={{ fontSize: 16, fontFamily: "'JetBrains Mono', monospace", color: INK.tie }}>T{t}</span>
+      </div>
+    </div>
+  );
+}
+
+function StatBlock({ label, value, sub, accent }) {
+  return (
+    <div style={{ textAlign: "center", minWidth: 56 }}>
+      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 26, fontWeight: 700, color: accent || INK.paper, lineHeight: 1.1 }}>{value}</div>
+      <div style={{ fontSize: 16, color: INK.creamDim, marginTop: 2, letterSpacing: "0.05em" }}>{label}</div>
+      {sub ? <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 16, color: INK.creamDim, marginTop: 1 }}>{sub}</div> : null}
+    </div>
+  );
+}
+
+function BigRoadCell({ cell, size = 36 }) {
+  if (!cell) return <div style={{ width: size, height: size, boxSizing: "border-box", borderRight: `1px solid ${INK.paperShadow}`, borderBottom: `1px solid ${INK.paperShadow}` }} />;
+  const color = cell.type === "B" ? INK.banker : INK.player;
+  const isWin = cell.outcome === "win";
+  const fillColor = isWin ? color : "transparent";
+  const textColor = isWin ? INK.paper : color;
+  const tieWin = cell.tieOutcome === "win";
+  const circleSize = Math.round(size * 0.75);
+  const tieSize = Math.round(size * 0.62);
+  return (
+    <div style={{ width: size, height: size, boxSizing: "border-box", borderRight: `1px solid ${INK.paperShadow}`, borderBottom: `1px solid ${INK.paperShadow}`, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ width: circleSize, height: circleSize, borderRadius: "50%", border: `2px solid ${color}`, background: fillColor, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, fontWeight: 700, color: textColor }}>
+        {cell.type}
+      </div>
+      {cell.ties > 0 && (
+        <div style={{
+          position: "absolute", bottom: -4, right: -4, width: tieSize, height: tieSize, borderRadius: "50%",
+          background: INK.tie,
+          border: `2px solid ${tieWin ? INK.win : INK.feltDark}`,
+          boxShadow: "0 2px 5px rgba(0,0,0,0.5)",
+          display: "flex", alignItems: "center", justifyContent: "center",
+        }}>
+          <span style={{ fontSize: 16, fontWeight: 800, color: "#fff" }}>{cell.ties > 1 ? `T${cell.ties}` : "T"}</span>
+        </div>
+      )}
+      {cell.banker6 && (
+        <div style={{
+          position: "absolute", top: -4, left: -4, width: tieSize, height: tieSize, borderRadius: "50%",
+          background: INK.brass,
+          border: `2px solid ${INK.feltDark}`,
+          boxShadow: "0 2px 5px rgba(0,0,0,0.5)",
+          display: "flex", alignItems: "center", justifyContent: "center",
+        }}>
+          <span style={{ fontSize: 16, fontWeight: 800, color: INK.feltDark }}>⑥</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function BeadDot({ h }) {
+  const size = 22;
+  if (!h) return <div style={{ width: size, height: size, border: `1px solid ${INK.paperShadow}`, boxSizing: "border-box" }} />;
+  const color = h.type === "B" ? INK.banker : h.type === "P" ? INK.player : INK.tie;
+  return (
+    <div style={{ width: size, height: size, border: `1px solid ${INK.paperShadow}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ width: 13, height: 13, borderRadius: "50%", background: color }} />
+    </div>
+  );
+}
+
+function DotCell({ cell }) {
+  const size = 13;
+  if (!cell) return <div style={{ width: size, height: size, border: `1px solid ${INK.paperShadow}`, boxSizing: "border-box" }} />;
+  const color = cell.type === "R" ? INK.brass : INK.creamDim;
+  return (
+    <div style={{ width: size, height: size, border: `1px solid ${INK.paperShadow}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ width: 7, height: 7, borderRadius: "50%", border: `2px solid ${color}` }} />
+    </div>
+  );
+}
+
+function NextOutcomeBar({ label, stats }) {
+  const { b, p, t, total } = stats;
+  if (total === 0) {
+    return (
+      <div style={{ marginBottom: 10 }}>
+        <div style={{ fontSize: 14, color: INK.creamDim, marginBottom: 3 }}>{label}</div>
+        <div style={{ fontSize: 13, color: INK.brassDim }}>まだデータがありません</div>
+      </div>
+    );
+  }
+  const bPct = (b / total) * 100, pPct = (p / total) * 100, tPct = (t / total) * 100;
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
+        <span style={{ fontSize: 14, color: INK.creamDim }}>{label}</span>
+        <span style={{ fontSize: 12, fontFamily: "'JetBrains Mono', monospace", color: INK.creamDim }}>{total}件中</span>
+      </div>
+      <div style={{ display: "flex", width: "100%", height: 14, borderRadius: 4, overflow: "hidden", background: "rgba(255,255,255,0.08)" }}>
+        {b > 0 && <div style={{ width: `${bPct}%`, background: INK.banker }} />}
+        {p > 0 && <div style={{ width: `${pPct}%`, background: INK.player }} />}
+        {t > 0 && <div style={{ width: `${tPct}%`, background: INK.tie }} />}
+      </div>
+      <div style={{ display: "flex", gap: 12, marginTop: 3, fontFamily: "'JetBrains Mono', monospace", fontSize: 13 }}>
+        <span style={{ color: INK.banker }}>B {bPct.toFixed(0)}%</span>
+        <span style={{ color: INK.player }}>P {pPct.toFixed(0)}%</span>
+        <span style={{ color: INK.tie }}>T {tPct.toFixed(0)}%</span>
+      </div>
+    </div>
+  );
+}
+
+function DecisionAidPanel({ history }) {
+  const afterBanker6 = computeFollowingStats(history, (h) => h.banker6);
+  const afterTie = computeFollowingStats(history, (h) => h.type === "T");
+  const continuation = computeStreakContinuation(history);
+  return (
+    <div>
+      <NextOutcomeBar label="バンカー6の次の出目" stats={afterBanker6} />
+      <NextOutcomeBar label="タイの次の出目" stats={afterTie} />
+      <div style={{ marginTop: 4 }}>
+        <div style={{ fontSize: 14, color: INK.creamDim, marginBottom: 4 }}>連続確率(このシューの連の伸び方)</div>
+        {continuation.total === 0 ? (
+          <div style={{ fontSize: 13, color: INK.brassDim }}>まだデータがありません</div>
+        ) : (
+          <div style={{ background: INK.paper, borderRadius: 8, padding: "2px 12px" }}>
+            {continuation.levels.map((lv) => (
+              <div key={lv.n} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 0", borderBottom: `1px solid ${INK.paperShadow}` }}>
+                <span style={{ fontSize: 14, color: "#333" }}>{lv.n}連続以上</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, fontWeight: 700, color: "#555" }}>{lv.pct.toFixed(0)}%</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: INK.brassDim }}>({lv.count}/{continuation.total})</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function BetHistoryPanel({ history, settings, unit, fmtTime }) {
+  const self = computeSelfStats(history, settings);
+  const betTotals = computeBetTotals(history);
+  if (history.length === 0) {
+    return <div style={{ padding: "16px 10px", textAlign: "center", color: INK.brassDim, fontSize: 15 }}>まだ記録がありません</div>;
+  }
+  const rows = history.slice().reverse();
+  const sideLabel = (h) => {
+    if (!h.bet) return "-";
+    if (h.bet === "B") return "B";
+    if (h.bet === "P") return "P";
+    return "T";
+  };
+  const sideColor = (h) => (h.bet === "B" ? INK.banker : h.bet === "P" ? INK.player : h.bet === "T" ? INK.tie : INK.creamDim);
+  return (
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 10, flexWrap: "wrap", rowGap: 8 }}>
+        <StatBlock label="賭けた局数" value={betTotals.totalBets} sub={`全${history.length}局中`} />
+        <StatBlock label="総ベット額" value={betTotals.totalWagered.toLocaleString()} sub={unit} />
+        <StatBlock label="収支" value={`${self.net > 0 ? "+" : ""}${Math.round(self.net).toLocaleString()}`} sub={unit} accent={self.net > 0 ? INK.win : self.net < 0 ? INK.banker : INK.paper} />
+      </div>
+      <div style={{ background: INK.paper, borderRadius: 8, maxHeight: 340, overflowY: "auto" }}>
+        {rows.map((h, i) => {
+          const idx = history.length - i;
+          const o = outcomeFor(h, settings);
+          const resultLabel = o.result === "win" ? "的中" : o.result === "lose" ? "外れ" : o.result === "push" ? "引分" : "—";
+          const resultColor = o.result === "win" ? INK.win : o.result === "lose" ? INK.banker : "#888";
+          return (
+            <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "5px 12px", borderBottom: `1px solid ${INK.paperShadow}`, gap: 8 }}>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#999", width: 26, flexShrink: 0 }}>#{idx}</span>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#999", width: 44, flexShrink: 0 }}>{fmtTime(h.ts)}</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: h.type === "B" ? INK.banker : h.type === "P" ? INK.player : INK.tie, width: 26, flexShrink: 0 }}>
+                {h.type}{h.banker6 ? "⑥" : ""}
+              </span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: sideColor(h), width: 16, textAlign: "center", flexShrink: 0 }}>{sideLabel(h)}</span>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#555", minWidth: 64, textAlign: "right" }}>
+                {h.betAmount ? h.betAmount.toLocaleString() : "-"}
+              </span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: resultColor, width: 34, textAlign: "center", flexShrink: 0 }}>{resultLabel}</span>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, fontWeight: 700, color: o.delta > 0 ? INK.win : o.delta < 0 ? INK.banker : "#999", minWidth: 62, textAlign: "right", flexShrink: 0 }}>
+                {o.result ? `${o.delta > 0 ? "+" : ""}${Math.round(o.delta).toLocaleString()}` : "-"}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function TableStatsPanel({ stats }) {
+  const diffRow = (label, actual, diff, color) => (
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: `1px solid ${INK.paperShadow}` }}>
+      <span style={{ fontSize: 15, color: "#333" }}>{label}</span>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 15, color: "#555" }}>{actual.toFixed(1)}%</span>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 15, fontWeight: 700, color: Math.abs(diff) < 3 ? INK.brassDim : color }}>{diff > 0 ? "+" : ""}{diff.toFixed(1)}pt</span>
+    </div>
+  );
+  return (
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 12 }}>
+        <StatBlock label="平均連続数" value={stats.totalRuns ? stats.avgStreak.toFixed(1) : "-"} sub="連" />
+        <StatBlock label="ドラゴン回数" value={stats.dragonCount} sub="6連以上" />
+        <StatBlock label="チョップ率" value={stats.totalRuns ? `${stats.chopRate.toFixed(0)}%` : "-"} sub="1回で切替" />
+      </div>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: 12 }}>
+        <StatBlock label="バンカー6 ⑥" value={stats.banker6Count} sub={stats.banker6Count ? `全体${stats.banker6RateOfTotal.toFixed(1)}%／B勝ち中${stats.banker6RateOfBankerWins.toFixed(1)}%` : ""} accent={INK.brass} />
+      </div>
+      <div style={{ background: INK.paper, borderRadius: 8, padding: "4px 12px" }}>
+        <div style={{ fontSize: 13, color: INK.brassDim, padding: "8px 0 4px" }}>理論値との差(実測% / 理論比とのズレ)</div>
+        {diffRow("バンカー", stats.bPct, stats.bDiff, INK.banker)}
+        {diffRow("プレイヤー", stats.pPct, stats.pDiff, INK.player)}
+        {diffRow("タイ", stats.tPct, stats.tDiff, INK.tie)}
+      </div>
+    </div>
+  );
+}
+
+function LedgerCard({ children, style }) {
+  const corner = (pos) => (
+    <div
+      key={pos}
+      style={{
+        position: "absolute",
+        width: 11,
+        height: 11,
+        ...pos,
+        borderColor: INK.brass,
+        borderWidth: 2,
+        borderStyle: "solid",
+        borderTop: pos.top !== undefined ? `2px solid ${INK.brass}` : "none",
+        borderBottom: pos.bottom !== undefined ? `2px solid ${INK.brass}` : "none",
+        borderLeft: pos.left !== undefined ? `2px solid ${INK.brass}` : "none",
+        borderRight: pos.right !== undefined ? `2px solid ${INK.brass}` : "none",
+      }}
+    />
+  );
+  return (
+    <div style={{ position: "relative", background: INK.paper, borderRadius: 6, ...style }}>
+      {corner({ top: 3, left: 3 })}
+      {corner({ top: 3, right: 3 })}
+      {corner({ bottom: 3, left: 3 })}
+      {corner({ bottom: 3, right: 3 })}
+      {children}
+    </div>
+  );
+}
+
+function DerivedRoadPanel({ label, desc, road }) {
+  const colArray = Array.from({ length: Math.max(road.cols, 1) }, (_, c) => c);
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 3, gap: 8 }}>
+        <span style={{ fontSize: 16, color: INK.creamDim, flexShrink: 0 }}>{label}</span>
+        <span style={{ fontSize: 13, color: INK.brassDim, textAlign: "right" }}>{desc}</span>
+      </div>
+      <div style={{ background: INK.paper, borderRadius: 5, padding: 5 }}>
+        {road.cols === 0 ? (
+          <div style={{ padding: "4px 6px", color: INK.brassDim, fontSize: 16 }}>データ不足</div>
+        ) : (
+          <div className="brb-scroll" style={{ overflowX: "auto" }}>
+            <div style={{ display: "flex" }}>
+              {colArray.map((c) => (
+                <div key={c} style={{ display: "flex", flexDirection: "column" }}>
+                  {Array.from({ length: MAX_ROWS }, (_, r) => <DotCell key={r} cell={road.cells[`${c}-${r}`]} />)}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ---- main app -------------------------------------------------------
+function App() {
+  const [history, setHistory] = useState([]);
+  const [settings, setSettings] = useState({ commission: true, tiePayout: 8, currency: "KRW", showSideBets: true, recentWindow2: 20 });
+  const [sessions, setSessions] = useState([]);
+  const [ready, setReady] = useState(false);
+  const [syncError, setSyncError] = useState(false);
+  // (banker6 is set directly by the ⑥ result button — see addResult)
+  const [betSide, setBetSide] = useState(null); // persists across hands now
+  const [betAmount, setBetAmount] = useState(CURRENCY_CONFIG.KRW.presets[0]);
+  const [confirmReset, setConfirmReset] = useState(false);
+  const [confirmEndSession, setConfirmEndSession] = useState(false);
+  const [activeTab, setActiveTab] = useState("input");
+  const [showSettings, setShowSettings] = useState(false);
+  const [settingsSaved, setSettingsSaved] = useState(false);
+  const [meta, setMeta] = useState(null);
+  const [expandedSession, setExpandedSession] = useState(null);
+  const [flashType, setFlashType] = useState(null);
+  const loadedRef = useRef(false);
+  const bigRoadScrollRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      const h = localStorage.getItem("baccarat-road-history");
+      if (h) { const parsed = JSON.parse(h); if (Array.isArray(parsed)) setHistory(parsed); }
+    } catch (e) {}
+    try {
+      const s = localStorage.getItem("baccarat-road-settings");
+      if (s) {
+        const parsed = JSON.parse(s);
+        if (parsed) {
+          setSettings((prev) => ({ ...prev, ...parsed }));
+          if (parsed.betAmount) setBetAmount(parsed.betAmount);
+        }
+      }
+    } catch (e) {}
+    try {
+      const ss = localStorage.getItem("baccarat-road-sessions");
+      if (ss) { const parsed = JSON.parse(ss); if (Array.isArray(parsed)) setSessions(parsed); }
+    } catch (e) {}
+    loadedRef.current = true;
+    setReady(true);
+  }, []);
+
+  useEffect(() => { if (!loadedRef.current) return; try { localStorage.setItem("baccarat-road-history", JSON.stringify(history)); } catch (e) { setSyncError(true); } }, [history]);
+  useEffect(() => { if (!loadedRef.current) return; try { localStorage.setItem("baccarat-road-settings", JSON.stringify({ ...settings, betAmount })); } catch (e) { setSyncError(true); } }, [settings, betAmount]);
+  useEffect(() => { if (!loadedRef.current) return; try { localStorage.setItem("baccarat-road-sessions", JSON.stringify(sessions)); } catch (e) { setSyncError(true); } }, [sessions]);
+  useEffect(() => { if (bigRoadScrollRef.current) bigRoadScrollRef.current.scrollLeft = bigRoadScrollRef.current.scrollWidth; }, [history]);
+  useEffect(() => {
+    const cfg = CURRENCY_CONFIG[settings.currency] || CURRENCY_CONFIG.KRW;
+    if (!cfg.presets.includes(betAmount)) setBetAmount(cfg.presets[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [settings.currency]);
+
+  // NOTE: bet side/amount are now sticky — they do NOT reset after each entry.
+  const flashTimerRef = useRef(null);
+  const addResult = (type, opts) => {
+    const banker6 = !!(opts && opts.banker6);
+    setHistory((h) => [...h, { type, banker6, bet: betSide, betAmount: betSide ? betAmount : null, ts: Date.now() }]);
+    setBetSide(null); // reset which side was chosen — makes it obvious the next round needs a fresh pick
+    // betAmount is intentionally NOT reset — carries over to the next round
+    setFlashType(type);
+    try { if (navigator.vibrate) navigator.vibrate(15); } catch (e) {}
+    if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+    flashTimerRef.current = setTimeout(() => setFlashType(null), 550);
+  };
+  const undo = () => setHistory((h) => h.slice(0, -1));
+  const doReset = () => { setHistory([]); setConfirmReset(false); };
+
+  const endSession = () => {
+    if (history.length === 0) { setConfirmEndSession(false); return; }
+    const self0 = computeSelfStats(history, settings);
+    const b0 = history.filter((h) => h.type === "B").length;
+    const p0 = history.filter((h) => h.type === "P").length;
+    const t0 = history.filter((h) => h.type === "T").length;
+    const session = {
+      id: Date.now(),
+      startTs: history[0].ts || null,
+      endTs: history[history.length - 1].ts || Date.now(),
+      history,
+      settings: { ...settings },
+      total: history.length,
+      b: b0, p: p0, t: t0,
+      net: self0.net, wins: self0.wins, losses: self0.losses, pushes: self0.pushes,
+    };
+    setSessions((s) => [session, ...s]);
+    setHistory([]);
+    setConfirmEndSession(false);
+  };
+  const deleteSession = (id) => setSessions((s) => s.filter((x) => x.id !== id));
+
+  const saveSettingsNow = () => {
+    try {
+      localStorage.setItem("baccarat-road-settings", JSON.stringify({ ...settings, betAmount }));
+      setSyncError(false);
+      setSettingsSaved(true);
+      setTimeout(() => setSettingsSaved(false), 1800);
+    } catch (e) {
+      setSyncError(true);
+      console.error(e);
+    }
+  };
+
+  const saveImage = (histArg, settingsArg, labelSuffix) => {
+    const h0 = histArg || history;
+    const s0 = settingsArg || settings;
+    const unit0 = (CURRENCY_CONFIG[s0.currency] || CURRENCY_CONFIG.KRW).unit;
+    const fmt0 = (n) => { const r = Math.round(n); return `${r > 0 ? "+" : ""}${r.toLocaleString()}${unit0}`; };
+    const d = computeBigRoad(h0, s0);
+    const cellsX = d.cells, colsX = d.cols;
+    const selfX = computeSelfStats(h0, s0);
+    const totalX = h0.length;
+    const bX = h0.filter((h) => h.type === "B").length;
+    const pX = h0.filter((h) => h.type === "P").length;
+    const tX = h0.filter((h) => h.type === "T").length;
+    const cellSize = 32;
+    const gridCols = Math.max(colsX, 1);
+    const width = Math.max(gridCols * cellSize + 40, 400);
+    const headerH = 110;
+    const roadH = MAX_ROWS * cellSize + 16;
+    const height = headerH + roadH + 40;
+
+    const canvas = document.createElement("canvas");
+    const scale = 2;
+    canvas.width = width * scale; canvas.height = height * scale;
+    const ctx = canvas.getContext("2d");
+    ctx.scale(scale, scale);
+    const grad = ctx.createLinearGradient(0, 0, 0, height);
+    grad.addColorStop(0, INK.feltLight); grad.addColorStop(1, INK.feltDark);
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = INK.paper; ctx.textAlign = "center";
+    ctx.font = "bold 22px 'Shippori Mincho', serif";
+    ctx.fillText("罫線帳 BACCARAT LEDGER", width / 2, 28);
+
+    const now = new Date();
+    const pad2 = (n) => String(n).padStart(2, "0");
+    const headerLabel = labelSuffix
+      ? labelSuffix
+      : `${now.getFullYear()}/${pad2(now.getMonth() + 1)}/${pad2(now.getDate())} ${pad2(now.getHours())}:${pad2(now.getMinutes())}`;
+    ctx.font = "11px 'JetBrains Mono', monospace";
+    ctx.fillStyle = INK.creamDim;
+    ctx.fillText(headerLabel, width / 2, 44);
+
+    ctx.textAlign = "left";
+    ctx.font = "12px 'JetBrains Mono', monospace";
+    ctx.fillStyle = INK.paper;
+    ctx.fillText(`総局数 ${totalX}　B ${bX}　P ${pX}　T ${tX}`, 16, 64);
+    ctx.fillStyle = selfX.net > 0 ? INK.win : selfX.net < 0 ? INK.player : INK.paper;
+    ctx.fillText(`収支 ${fmt0(selfX.net)}　成績 ${selfX.wins}-${selfX.losses}-${selfX.pushes}`, 16, 82);
+
+    const roadTop = headerH - 10;
+    ctx.fillStyle = INK.paper;
+    roundRectPath(ctx, 16, roadTop, width - 32, roadH, 6); ctx.fill();
+    ctx.strokeStyle = INK.brass; ctx.lineWidth = 1.5;
+    roundRectPath(ctx, 16, roadTop, width - 32, roadH, 6); ctx.stroke();
+    for (let c = 0; c < gridCols; c++) {
+      for (let r = 0; r < MAX_ROWS; r++) {
+        drawRoadCellCanvas(ctx, cellsX[`${c}-${r}`], 24 + c * cellSize, roadTop + 8 + r * cellSize, cellSize);
+      }
+    }
+
+    const filename = `baccarat-road-${now.getFullYear()}${pad2(now.getMonth() + 1)}${pad2(now.getDate())}-${pad2(now.getHours())}${pad2(now.getMinutes())}.png`;
+    canvas.toBlob(async (blob) => {
+      if (!blob) return;
+      try {
+        const file = new File([blob], filename, { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({ files: [file], title: "罫線帳" });
+          return;
+        }
+      } catch (e) {}
+      const dataUrl = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = dataUrl; link.download = filename;
+      document.body.appendChild(link); link.click(); document.body.removeChild(link);
+    }, "image/png");
+  };
+
+  const { cells, cols, leadingTies } = computeBigRoad(history, settings);
+  const beadPlate = computeBeadPlate(history);
+  const beadCols = Math.max(1, Math.ceil(history.length / MAX_ROWS));
+  const streak = computeStreak(history);
+  const self = computeSelfStats(history, settings);
+  const recent10 = computeRecentStats(history, 10);
+  const recent20 = computeRecentStats(history, settings.recentWindow2);
+  const derived = computeDerivedRoads(history);
+  const tableStats = computeTableStats(history);
+  const total = history.length;
+  const bCount = history.filter((h) => h.type === "B").length;
+  const pCount = history.filter((h) => h.type === "P").length;
+  const colArray = Array.from({ length: Math.max(cols, 1) }, (_, c) => c);
+  const beadColArray = Array.from({ length: beadCols }, (_, c) => c);
+
+  const currencyCfg = CURRENCY_CONFIG[settings.currency] || CURRENCY_CONFIG.KRW;
+  const unit = currencyCfg.unit;
+  const presets = currencyCfg.presets;
+  const step = currencyCfg.step;
+  const fmtNet = (n) => { const r = Math.round(n); return `${r > 0 ? "+" : ""}${r.toLocaleString()}${unit}`; };
+  const fmtTime = (ts) => {
+    if (!ts) return "-";
+    const d = new Date(ts);
+    const p2 = (n) => String(n).padStart(2, "0");
+    return `${p2(d.getHours())}:${p2(d.getMinutes())}`;
+  };
+  const formatPresetLabel = (v) => (settings.currency === "KRW" && v >= 10000 ? `${v / 10000}万` : v.toLocaleString());
+
+  if (!ready) {
+    return <div style={{ minHeight: "100vh", background: INK.felt, display: "flex", alignItems: "center", justifyContent: "center", color: INK.creamDim }}>読み込み中…</div>;
+  }
+
+  const sideBtn = (side, enLabel, jpLabel, color, colorDeep) => {
+    const active = betSide === side;
+    return (
+      <button
+        className="brb-side-btn"
+        onClick={() => setBetSide(side)}
+        style={{
+          flex: 1, padding: "12px 0 10px", borderRadius: 9,
+          border: `1.5px solid ${color}`,
+          background: active
+            ? `linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0) 45%), linear-gradient(180deg, ${color}, ${colorDeep})`
+            : "rgba(255,255,255,0.03)",
+          boxShadow: active ? `0 0 0 1px ${color}, 0 4px 12px ${color}66` : "none",
+          color: active ? INK.paper : color,
+          cursor: "pointer",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 1,
+          transition: "all 0.15s ease",
+        }}
+      >
+        <span style={{ fontSize: side ? 20 : 18, fontWeight: 800, letterSpacing: "0.08em", fontFamily: "'JetBrains Mono', monospace" }}>{enLabel}</span>
+        <span style={{ fontSize: 16, opacity: 0.85, letterSpacing: "0.05em" }}>{jpLabel}</span>
+      </button>
+    );
+  };
+
+  // approx height of the fixed bottom panel so scroll content doesn't get hidden under it
+  const bottomPanelSpacer = (betSide ? 400 : 330) + 30;
+
+  return (
+    <div style={{
+      minHeight: "100vh",
+      background: `radial-gradient(ellipse at top, ${INK.feltLight} 0%, ${INK.felt} 45%, ${INK.feltDark} 100%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0px, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 5px)`,
+      backgroundBlendMode: "normal, overlay",
+      fontFamily: "'Zen Kaku Gothic New', sans-serif",
+    }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+        * { -webkit-tap-highlight-color: transparent; }
+        .brb-btn { transition: transform 0.08s ease; }
+        .brb-side-btn:active { transform: scale(0.94); }
+        .brb-btn:active { transform: scale(0.90); filter: brightness(1.25); }
+        @keyframes brbBounce {
+          0% { transform: scale(1); }
+          30% { transform: scale(0.88, 1.1); }
+          55% { transform: scale(1.07, 0.94); }
+          100% { transform: scale(1); }
+        }
+        .brb-btn-flash { animation: brbBounce 0.4s ease-out; }
+        @keyframes brbCheckPop {
+          0% { opacity: 0; transform: scale(0.3) translateY(4px); }
+          30% { opacity: 1; transform: scale(1.3) translateY(0); }
+          60% { opacity: 1; transform: scale(1); }
+          100% { opacity: 0; transform: scale(1); }
+        }
+        .brb-check {
+          position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+          font-size: 36px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+          animation: brbCheckPop 0.5s ease-out forwards; pointer-events: none;
+        }
+        .brb-scroll::-webkit-scrollbar { height: 5px; }
+        .brb-scroll::-webkit-scrollbar-thumb { background: ${INK.brassDim}; border-radius: 3px; }
+        /* --- desktop / mouse friendliness --- */
+        @media (min-width: 560px) {
+          .brb-app-shell { box-shadow: 0 0 0 1px ${INK.brassDim}, 0 30px 80px rgba(0,0,0,0.6); }
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .brb-btn:hover { filter: brightness(1.12); }
+          .brb-side-btn:hover { filter: brightness(1.15); }
+          button:hover { cursor: pointer; }
+        }
+      `}</style>
+
+      <div className="brb-app-shell" style={{ maxWidth: 480, margin: "0 auto", position: "relative", transform: "translate(0,0)" }}>
+
+      {/* ============ STICKY TOP BAR: nav ============ */}
+      <div style={{
+        position: "sticky", top: 0, zIndex: 30,
+        background: `linear-gradient(180deg, ${INK.feltDark} 0%, ${INK.feltLight} 100%)`,
+        borderBottom: `1px solid ${INK.brass}`,
+        boxShadow: "0 4px 14px rgba(0,0,0,0.4)",
+        padding: "10px 16px",
+        paddingTop: "calc(10px + env(safe-area-inset-top))",
+      }}>
+        <div style={{ display: "flex", gap: 6, background: "rgba(0,0,0,0.22)", border: `1px solid ${INK.brassDim}`, borderRadius: 10, padding: 4 }}>
+          <button onClick={() => setActiveTab("input")} style={{ flex: 1, padding: "9px 0", borderRadius: 7, border: "none", background: activeTab === "input" ? `linear-gradient(180deg, ${INK.brass}, ${INK.brassDim})` : "transparent", color: activeTab === "input" ? INK.feltDark : INK.creamDim, fontWeight: 700, fontSize: 15, cursor: "pointer" }}>入力</button>
+          <button onClick={() => setActiveTab("analysis")} style={{ flex: 1, padding: "9px 0", borderRadius: 7, border: "none", background: activeTab === "analysis" ? `linear-gradient(180deg, ${INK.brass}, ${INK.brassDim})` : "transparent", color: activeTab === "analysis" ? INK.feltDark : INK.creamDim, fontWeight: 700, fontSize: 15, cursor: "pointer" }}>情報</button>
+          <button onClick={() => setShowSettings(true)} style={{ flex: 1, padding: "9px 0", borderRadius: 7, border: "none", background: "transparent", color: INK.creamDim, fontWeight: 700, fontSize: 15, cursor: "pointer" }}>設定</button>
+        </div>
+      </div>
+
+      {/* compact header */}
+      <div style={{ padding: "16px 16px 10px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{
+            width: 30, height: 30, borderRadius: "50%",
+            border: `1.5px solid ${INK.brass}`,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontFamily: "'Shippori Mincho', serif", fontSize: 15, fontWeight: 700, color: INK.brass,
+            boxShadow: `inset 0 0 0 1px rgba(201,162,39,0.25)`,
+          }}>罫</div>
+          <div style={{ fontFamily: "'Shippori Mincho', serif", fontSize: 20, fontWeight: 700, color: INK.paper, letterSpacing: "0.1em" }}>罫線帳</div>
+        </div>
+        <div style={{ textAlign: "right" }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 22, fontWeight: 700, color: self.net > 0 ? INK.win : self.net < 0 ? INK.player : INK.paper, lineHeight: 1, whiteSpace: "nowrap" }}>{self.net > 0 ? "+" : ""}{Math.round(self.net).toLocaleString()}</div>
+          <div style={{ fontSize: 13, color: INK.creamDim, marginTop: 2, letterSpacing: "0.08em" }}>収支・{unit}</div>
+        </div>
+      </div>
+      <div style={{ margin: "0 16px 10px", height: 1, background: `linear-gradient(90deg, transparent, ${INK.brassDim}, transparent)` }} />
+      {syncError && (
+        <div style={{ margin: "0 16px 10px", textAlign: "center", fontSize: 12, color: "#e07a6b" }}>
+          ⚠ 端末への保存に失敗しました(プライベートブラウズ中は保存されない場合があります)
+        </div>
+      )}
+
+      {/* compact quick stats row (always visible) */}
+      <div style={{ margin: "0 16px 6px", display: "flex", justifyContent: "space-around", padding: "6px 4px" }}>
+        <StatBlock label="総局数" value={total} />
+        <StatBlock label="バンカー" value={bCount} accent={INK.banker} />
+        <StatBlock label="プレイヤー" value={pCount} accent={INK.player} />
+      </div>
+      <div style={{ margin: "0 16px 12px", display: "flex", justifyContent: "space-around", padding: "6px 4px" }}>
+        <StatBlock label="勝-負-分" value={`${self.wins}-${self.losses}-${self.pushes}`} />
+        <StatBlock label="連勝" value={streak.count ? streak.count : "-"} accent={streak.type === "B" ? INK.banker : streak.type === "P" ? INK.player : INK.paper} />
+      </div>
+
+      {/* ============ INPUT TAB: standard info + road ============ */}
+      {activeTab === "input" && (
+        <>
+          <div style={{ margin: "0 16px 14px" }}>
+            <div style={{ fontSize: 17, color: INK.creamDim, marginBottom: 4, display: "flex", justifyContent: "space-between", fontFamily: "'Shippori Mincho', serif" }}>
+              <span>大路 — Big Road</span>
+              {leadingTies > 0 && <span style={{ color: INK.tie, fontFamily: "'Zen Kaku Gothic New', sans-serif" }}>先頭タイ×{leadingTies}</span>}
+            </div>
+            <LedgerCard style={{ padding: 8, boxShadow: "0 6px 16px rgba(0,0,0,0.35)" }}>
+              {total === 0 ? (
+                <div style={{ padding: "16px 8px", textAlign: "center", color: INK.brassDim, fontSize: 18 }}>最初の一局をどうぞ</div>
+              ) : (
+                <div ref={bigRoadScrollRef} className="brb-scroll" style={{ overflowX: "auto" }}>
+                  <div style={{ display: "flex" }}>
+                    {colArray.map((c) => (
+                      <div key={c} style={{ display: "flex", flexDirection: "column" }}>
+                        {Array.from({ length: MAX_ROWS }, (_, r) => <BigRoadCell key={r} cell={cells[`${c}-${r}`]} />)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </LedgerCard>
+          </div>
+
+          <div style={{ margin: "0 16px 12px" }}>
+            <div style={{ fontSize: 17, color: INK.creamDim, marginBottom: 4 }}>珠盤路</div>
+            <div style={{ background: INK.paper, borderRadius: 6, padding: 6 }}>
+              {total === 0 ? (
+                <div style={{ padding: "10px 8px", textAlign: "center", color: INK.brassDim, fontSize: 18 }}>記録なし</div>
+              ) : (
+                <div className="brb-scroll" style={{ overflowX: "auto" }}>
+                  <div style={{ display: "flex" }}>
+                    {beadColArray.map((c) => (
+                      <div key={c} style={{ display: "flex", flexDirection: "column" }}>
+                        {Array.from({ length: MAX_ROWS }, (_, r) => { const found = beadPlate.find((b) => b.col === c && b.row === r); return <BeadDot key={r} h={found} />; })}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+        </>
+      )}
+
+      {/* ============ ANALYSIS TAB: pattern-reading data for this shoe ============ */}
+      {activeTab === "analysis" && (
+        <>
+          <div style={{ margin: "0 16px 14px" }}>
+            <div style={{ fontSize: 17, color: INK.creamDim, marginBottom: 4, fontFamily: "'Shippori Mincho', serif" }}>掛け金履歴(リセットするまで)</div>
+            <div style={{ background: "rgba(0,0,0,0.18)", border: `1px solid ${INK.brassDim}`, borderRadius: 10, padding: 12 }}>
+              <BetHistoryPanel history={history} settings={settings} unit={unit} fmtTime={fmtTime} />
+            </div>
+          </div>
+
+          <div style={{ margin: "0 16px 14px", display: "flex", flexDirection: "column", gap: 8, padding: "10px 12px", background: "rgba(0,0,0,0.15)", borderRadius: 8 }}>
+            <MiniRecentBar label="直近10回" stats={recent10} />
+            <MiniRecentBar label={`直近${settings.recentWindow2}回`} stats={recent20} />
+          </div>
+
+          <div style={{ margin: "0 16px 14px" }}>
+            <div style={{ fontSize: 17, color: INK.creamDim, marginBottom: 4, fontFamily: "'Shippori Mincho', serif" }}>このシューの傾向</div>
+            <div style={{ background: "rgba(0,0,0,0.18)", border: `1px solid ${INK.brassDim}`, borderRadius: 10, padding: 12 }}>
+              <TableStatsPanel stats={tableStats} />
+            </div>
+          </div>
+
+          <div style={{ margin: "0 16px 14px" }}>
+            <div style={{ fontSize: 17, color: INK.creamDim, marginBottom: 4, fontFamily: "'Shippori Mincho', serif" }}>選択の補助情報</div>
+            <div style={{ background: "rgba(0,0,0,0.18)", border: `1px solid ${INK.brassDim}`, borderRadius: 10, padding: 12 }}>
+              <DecisionAidPanel history={history} />
+              <div style={{ fontSize: 11, color: INK.creamDim, marginTop: 4 }}>あくまでこのシューの実績集計です。将来の結果を保証するものではありません。</div>
+            </div>
+          </div>
+
+          <div style={{ margin: "0 16px 14px" }}>
+            <div style={{ fontSize: 17, color: INK.creamDim, marginBottom: 4 }}>上級路(参考)</div>
+            <div style={{ background: "rgba(0,0,0,0.18)", border: `1px solid ${INK.brassDim}`, borderRadius: 8, padding: 8 }}>
+              <DerivedRoadPanel label="大眼仔" desc="1列前と比較(最も直近の流れ)" road={derived.bigEye} />
+              <DerivedRoadPanel label="小路" desc="2列前と比較(やや広い視点)" road={derived.smallRoad} />
+              <DerivedRoadPanel label="小強路" desc="3列前と比較(さらに広い視点)" road={derived.cockroach} />
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* spacer so scrolling content never hides under the fixed bottom panel (input tab only) */}
+      {activeTab === "input" && <div style={{ height: bottomPanelSpacer }} />}
+
+      {/* ============ INPUT ZONE — fixed to bottom, only on the Input tab ============ */}
+      {activeTab === "input" && (
+      <div
+        style={{
+          position: "fixed",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 20,
+          background: `linear-gradient(180deg, ${INK.feltLight} 0%, ${INK.feltDark} 100%)`,
+          borderTop: `1px solid ${INK.brass}`,
+          boxShadow: "0 -6px 20px rgba(0,0,0,0.5)",
+          padding: "14px 16px calc(14px + env(safe-area-inset-bottom))",
+        }}
+      >
+        {/* bet side - persistent selection */}
+        <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+          {sideBtn(null, "SKIP", "見送り", INK.creamDim, INK.creamDim)}
+          {sideBtn("B", "BANKER", "バンカー", INK.banker, INK.bankerDeep)}
+          {sideBtn("P", "PLAYER", "プレイヤー", INK.player, INK.playerDeep)}
+          {sideBtn("T", "TIE", "タイ", INK.tie, "#276B45")}
+        </div>
+
+        {/* amount presets - one tap sets amount, hidden entirely when 見送り */}
+        {betSide && (
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+            <button onClick={() => setBetAmount((a) => Math.max(step, a - step))} style={{ width: 34, height: 34, borderRadius: "50%", border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.paper, fontSize: 24, cursor: "pointer", flexShrink: 0 }}>−</button>
+            <div style={{ display: "flex", gap: 6, flex: 1, overflowX: "auto" }}>
+              {presets.map((v) => (
+                <button key={v} onClick={() => setBetAmount(v)} style={{ flexShrink: 0, padding: "10px 16px", borderRadius: 999, border: `1px solid ${betAmount === v ? INK.brass : INK.brassDim}`, background: betAmount === v ? INK.brass : "transparent", color: betAmount === v ? INK.feltDark : INK.brassDim, fontSize: 19, fontWeight: 700, cursor: "pointer" }}>
+                  {formatPresetLabel(v)}
+                </button>
+              ))}
+            </div>
+            <button onClick={() => setBetAmount((a) => a + step)} style={{ width: 34, height: 34, borderRadius: "50%", border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.paper, fontSize: 24, cursor: "pointer", flexShrink: 0 }}>＋</button>
+          </div>
+        )}
+
+        {/* result buttons - the main, most frequent tap, closest to the thumb */}
+        <div style={{ display: "flex", gap: 8 }}>
+          <button className={`brb-btn${flashType === "P" ? " brb-btn-flash" : ""}`} onClick={() => addResult("P")} style={{ position: "relative", flex: 1, padding: "19px 0", borderRadius: 12, border: `1px solid ${INK.playerDeep}`, background: `linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 40%), linear-gradient(180deg, ${INK.player}, ${INK.playerDeep})`, color: INK.paper, fontWeight: 700, fontSize: 26, boxShadow: "0 4px 10px rgba(0,0,0,0.4)", cursor: "pointer" }}>P{flashType === "P" && <span className="brb-check">✓</span>}</button>
+          <button className={`brb-btn${flashType === "T" ? " brb-btn-flash" : ""}`} onClick={() => addResult("T")} style={{ position: "relative", flex: "0 0 56px", padding: "19px 0", borderRadius: 12, border: "1px solid #1d5537", background: `linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 40%), linear-gradient(180deg, ${INK.tie}, #276B45)`, color: INK.paper, fontWeight: 700, fontSize: 22, boxShadow: "0 4px 10px rgba(0,0,0,0.4)", cursor: "pointer" }}>T{flashType === "T" && <span className="brb-check">✓</span>}</button>
+          <button className={`brb-btn${flashType === "B" ? " brb-btn-flash" : ""}`} onClick={() => addResult("B")} style={{ position: "relative", flex: 1, padding: "19px 0", borderRadius: 12, border: `1px solid ${INK.bankerDeep}`, background: `linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 40%), linear-gradient(180deg, ${INK.banker}, ${INK.bankerDeep})`, color: INK.paper, fontWeight: 700, fontSize: 26, boxShadow: "0 4px 10px rgba(0,0,0,0.4)", cursor: "pointer" }}>B{flashType === "B" && <span className="brb-check">✓</span>}</button>
+          {settings.showSideBets && (
+            <button
+              className={`brb-btn${flashType === "B6" ? " brb-btn-flash" : ""}`}
+              onClick={() => { setFlashType("B6"); if (flashTimerRef.current) clearTimeout(flashTimerRef.current); flashTimerRef.current = setTimeout(() => setFlashType(null), 550); addResult("B", { banker6: true }); }}
+              title="バンカーが6で勝った場合(配当半分)"
+              style={{ position: "relative", flex: "0 0 56px", padding: "19px 0", borderRadius: 12, border: `1px solid ${INK.brassDim}`, background: `linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 40%), linear-gradient(180deg, ${INK.brass}, ${INK.brassDim})`, color: INK.feltDark, fontWeight: 700, fontSize: 22, boxShadow: "0 4px 10px rgba(0,0,0,0.4)", cursor: "pointer" }}
+            >
+              ⑥{flashType === "B6" && <span className="brb-check" style={{ color: INK.feltDark, textShadow: "none" }}>✓</span>}
+            </button>
+          )}
+        </div>
+
+        {/* last-record readout + undo, combined into one slim row */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, marginTop: 8 }}>
+          <span style={{ fontSize: 15, fontFamily: "'JetBrains Mono', monospace", color: INK.creamDim }}>
+            {history.length > 0 ? (
+              <>前回: <span style={{ fontWeight: 700, color: history[history.length - 1].type === "B" ? INK.banker : history[history.length - 1].type === "P" ? INK.player : INK.tie }}>{history[history.length - 1].type}</span> (#{history.length})</>
+            ) : "記録なし"}
+          </span>
+          <button onClick={undo} disabled={total === 0} style={{ padding: "5px 14px", borderRadius: 999, border: `1px solid ${INK.creamDim}`, background: "transparent", color: total === 0 ? INK.brassDim : INK.creamDim, fontSize: 15, cursor: total === 0 ? "default" : "pointer", opacity: total === 0 ? 0.5 : 1 }}>↺ 戻す</button>
+        </div>
+      </div>
+      )}
+
+      {/* ============ SETTINGS SCREEN (full overlay) ============ */}
+      {showSettings && (
+        <div style={{
+          position: "fixed", inset: 0, zIndex: 50,
+          background: `radial-gradient(ellipse at top, ${INK.feltLight} 0%, ${INK.felt} 45%, ${INK.feltDark} 100%)`,
+          overflowY: "auto", paddingBottom: 40,
+          paddingTop: "env(safe-area-inset-top)",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 16px 12px" }}>
+            <div style={{ fontFamily: "'Shippori Mincho', serif", fontSize: 22, fontWeight: 700, color: INK.paper, letterSpacing: "0.08em" }}>設定</div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <button
+                onClick={saveSettingsNow}
+                style={{
+                  padding: "8px 16px", borderRadius: 999, border: `1px solid ${INK.brass}`,
+                  background: settingsSaved ? INK.brass : "rgba(201,162,39,0.10)",
+                  color: settingsSaved ? INK.feltDark : INK.brass,
+                  fontSize: 14, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap",
+                }}
+              >
+                {settingsSaved ? "✓ 保存しました" : "💾 設定を保存"}
+              </button>
+              <button onClick={() => setShowSettings(false)} style={{ width: 34, height: 34, borderRadius: "50%", border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.creamDim, fontSize: 18, cursor: "pointer", flexShrink: 0 }}>✕</button>
+            </div>
+          </div>
+
+          {/* currency */}
+          <div style={{ margin: "0 16px 20px" }}>
+            <div style={{ fontSize: 15, color: INK.brass, marginBottom: 8, letterSpacing: "0.05em" }}>通貨・ベット単位</div>
+            <div style={{ display: "flex", gap: 8 }}>
+              {[["KRW", "ウォン"], ["JPY", "円"], ["USD", "ドル"]].map(([code, label]) => (
+                <button
+                  key={code}
+                  onClick={() => setSettings((s) => ({ ...s, currency: code }))}
+                  style={{
+                    flex: 1, padding: "14px 0", borderRadius: 10,
+                    border: `1.5px solid ${INK.brass}`,
+                    background: settings.currency === code ? `linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0) 45%), linear-gradient(180deg, ${INK.brass}, ${INK.brassDim})` : "rgba(255,255,255,0.03)",
+                    color: settings.currency === code ? INK.feltDark : INK.brass,
+                    fontSize: 18, fontWeight: 700, cursor: "pointer",
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div style={{ fontSize: 13, color: INK.creamDim, marginTop: 8 }}>
+              プリセット金額とステップ幅は通貨に応じて自動設定されます({presets.map((v) => formatPresetLabel(v)).join(" / ")}{unit})
+            </div>
+          </div>
+
+          {/* rules */}
+          <div style={{ margin: "0 16px 20px" }}>
+            <div style={{ fontSize: 15, color: INK.brass, marginBottom: 8, letterSpacing: "0.05em" }}>配当ルール</div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button onClick={() => setSettings((s) => ({ ...s, commission: !s.commission }))} style={{ padding: "10px 16px", borderRadius: 999, border: `1px solid ${INK.brassDim}`, background: settings.commission ? INK.brassDim : "transparent", color: settings.commission ? INK.paper : INK.brassDim, fontSize: 16, cursor: "pointer" }}>
+                コミッション5%: {settings.commission ? "あり" : "なし"}
+              </button>
+              <button onClick={() => setSettings((s) => ({ ...s, tiePayout: s.tiePayout === 8 ? 9 : 8 }))} style={{ padding: "10px 16px", borderRadius: 999, border: `1px solid ${INK.brassDim}`, background: "transparent", color: INK.brassDim, fontSize: 16, cursor: "pointer" }}>
+                タイ配当: {settings.tiePayout}倍
+              </button>
+            </div>
+          </div>
+
+          {/* display options */}
+          <div style={{ margin: "0 16px 20px" }}>
+            <div style={{ fontSize: 15, color: INK.brass, marginBottom: 8, letterSpacing: "0.05em" }}>表示設定</div>
+            <button
+              onClick={() => setSettings((s) => ({ ...s, showSideBets: !s.showSideBets }))}
+              style={{
+                width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
+                padding: "12px 16px", borderRadius: 10, border: `1px solid ${INK.brassDim}`,
+                background: settings.showSideBets ? "rgba(201,162,39,0.10)" : "transparent",
+                color: settings.showSideBets ? INK.brass : INK.creamDim, fontSize: 16, cursor: "pointer",
+              }}
+            >
+              <span>バンカー6ボタン(⑥、配当半分)を表示</span>
+              <span style={{
+                width: 40, height: 22, borderRadius: 999, position: "relative", flexShrink: 0, marginLeft: 10,
+                background: settings.showSideBets ? INK.brass : "rgba(255,255,255,0.15)",
+              }}>
+                <span style={{
+                  position: "absolute", top: 2, left: settings.showSideBets ? 20 : 2,
+                  width: 18, height: 18, borderRadius: "50%", background: INK.paper,
+                  transition: "left 0.15s ease",
+                }} />
+              </span>
+            </button>
+
+            <div style={{ marginTop: 10, padding: "12px 16px", borderRadius: 10, border: `1px solid ${INK.brassDim}` }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: 16, color: INK.creamDim }}>比率バーの2つ目の回数(現在10回に加えて)</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, marginTop: 8 }}>
+                <button onClick={() => setSettings((s) => ({ ...s, recentWindow2: Math.max(5, s.recentWindow2 - 5) }))} style={{ width: 34, height: 34, borderRadius: "50%", border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.paper, fontSize: 20, cursor: "pointer" }}>−</button>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 20, fontWeight: 700, color: INK.brass, minWidth: 70, textAlign: "center" }}>直近{settings.recentWindow2}回</div>
+                <button onClick={() => setSettings((s) => ({ ...s, recentWindow2: s.recentWindow2 + 5 }))} style={{ width: 34, height: 34, borderRadius: "50%", border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.paper, fontSize: 20, cursor: "pointer" }}>＋</button>
+              </div>
+              <div style={{ display: "flex", gap: 6, marginTop: 8, justifyContent: "center", flexWrap: "wrap" }}>
+                {[15, 20, 30, 50].map((v) => (
+                  <button key={v} onClick={() => setSettings((s) => ({ ...s, recentWindow2: v }))} style={{ padding: "5px 12px", borderRadius: 999, border: `1px solid ${settings.recentWindow2 === v ? INK.brass : INK.brassDim}`, background: settings.recentWindow2 === v ? INK.brass : "transparent", color: settings.recentWindow2 === v ? INK.feltDark : INK.brassDim, fontSize: 13, cursor: "pointer" }}>{v}回</button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* data management */}
+          <div style={{ margin: "0 16px 20px" }}>
+            <div style={{ fontSize: 15, color: INK.brass, marginBottom: 8, letterSpacing: "0.05em" }}>データ管理</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {!confirmEndSession ? (
+                <button onClick={() => setConfirmEndSession(true)} disabled={total === 0} style={{ padding: "12px 0", borderRadius: 10, border: `1px solid ${INK.brass}`, background: "rgba(201,162,39,0.10)", color: total === 0 ? INK.brassDim : INK.brass, fontSize: 17, fontWeight: 700, cursor: total === 0 ? "default" : "pointer", opacity: total === 0 ? 0.6 : 1 }}>🗂 保存(セッションを終了して記録)</button>
+              ) : (
+                <div style={{ display: "flex", gap: 8 }}>
+                  <button onClick={endSession} style={{ flex: 1, padding: "12px 0", borderRadius: 10, border: "none", background: INK.brass, color: INK.feltDark, fontSize: 17, fontWeight: 700, cursor: "pointer" }}>保存して新規開始</button>
+                  <button onClick={() => setConfirmEndSession(false)} style={{ padding: "12px 20px", borderRadius: 10, border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.creamDim, fontSize: 17, cursor: "pointer" }}>取消</button>
+                </div>
+              )}
+              <button onClick={saveImage} disabled={total === 0} style={{ padding: "12px 0", borderRadius: 10, border: `1px solid ${INK.creamDim}`, background: "transparent", color: total === 0 ? INK.brassDim : INK.creamDim, fontSize: 17, fontWeight: 700, cursor: total === 0 ? "default" : "pointer", opacity: total === 0 ? 0.6 : 1 }}>📷 画像保存</button>
+              {!confirmReset ? (
+                <button onClick={() => setConfirmReset(true)} disabled={total === 0} style={{ padding: "12px 0", borderRadius: 10, border: `1px solid ${INK.player}`, background: "transparent", color: total === 0 ? INK.brassDim : INK.player, fontSize: 17, fontWeight: 700, cursor: total === 0 ? "default" : "pointer", opacity: total === 0 ? 0.6 : 1 }}>🗑 リセット(保存せず消去)</button>
+              ) : (
+                <div style={{ display: "flex", gap: 8 }}>
+                  <button onClick={doReset} style={{ flex: 1, padding: "12px 0", borderRadius: 10, border: "none", background: INK.player, color: INK.paper, fontSize: 17, fontWeight: 700, cursor: "pointer" }}>本当に消去する</button>
+                  <button onClick={() => setConfirmReset(false)} style={{ padding: "12px 20px", borderRadius: 10, border: `1px solid ${INK.creamDim}`, background: "transparent", color: INK.creamDim, fontSize: 17, cursor: "pointer" }}>取消</button>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* past sessions */}
+          <div style={{ margin: "0 16px 20px" }}>
+            <div style={{ fontSize: 15, color: INK.brass, marginBottom: 8, letterSpacing: "0.05em" }}>過去の記録 ({sessions.length})</div>
+            {sessions.length === 0 ? (
+              <div style={{ background: INK.paper, borderRadius: 8, padding: 16, textAlign: "center", color: INK.brassDim, fontSize: 15 }}>保存された記録はまだありません</div>
+            ) : (
+              sessions.map((s) => {
+                const isOpen = expandedSession === s.id;
+                const rd = isOpen ? computeBigRoad(s.history, s.settings) : null;
+                const sCols = isOpen ? Array.from({ length: Math.max(rd.cols, 1) }, (_, c) => c) : [];
+                const sUnit = (CURRENCY_CONFIG[s.settings.currency] || CURRENCY_CONFIG.KRW).unit;
+                const sFmt = (n) => { const r = Math.round(n); return `${r > 0 ? "+" : ""}${r.toLocaleString()}${sUnit}`; };
+                return (
+                  <div key={s.id} style={{ background: INK.paper, borderRadius: 8, padding: 12, marginBottom: 8 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={() => setExpandedSession(isOpen ? null : s.id)}>
+                      <div>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: "#333" }}>{new Date(s.startTs).toLocaleDateString()} {new Date(s.startTs).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}〜</div>
+                        <div style={{ fontSize: 12, color: INK.brassDim }}>{s.total}局　B{s.b} P{s.p} T{s.t}</div>
+                      </div>
+                      <div style={{ textAlign: "right" }}>
+                        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: 16, color: s.net > 0 ? INK.win : s.net < 0 ? INK.player : "#333" }}>{sFmt(s.net)}</div>
+                        <div style={{ fontSize: 12, color: INK.brassDim }}>{s.wins}-{s.losses}-{s.pushes}</div>
+                      </div>
+                    </div>
+                    {isOpen && (
+                      <div style={{ marginTop: 10 }}>
+                        <div className="brb-scroll" style={{ overflowX: "auto" }}>
+                          <div style={{ display: "flex" }}>
+                            {sCols.map((c) => (
+                              <div key={c} style={{ display: "flex", flexDirection: "column" }}>
+                                {Array.from({ length: MAX_ROWS }, (_, r) => <BigRoadCell key={r} cell={rd.cells[`${c}-${r}`]} size={24} />)}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div style={{ marginTop: 10 }}>
+                          <div style={{ fontSize: 12, color: INK.brassDim, marginBottom: 4 }}>掛け金履歴</div>
+                          <BetHistoryPanel history={s.history} settings={s.settings} unit={sUnit} fmtTime={fmtTime} />
+                        </div>
+                        <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+                          <button
+                            onClick={() => saveImage(s.history, s.settings, `${new Date(s.startTs).toLocaleDateString()} ${new Date(s.startTs).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}〜`)}
+                            style={{ padding: "6px 14px", borderRadius: 999, border: `1px solid ${INK.brass}`, background: "rgba(201,162,39,0.10)", color: INK.brass, fontSize: 13, cursor: "pointer" }}
+                          >
+                            📷 画像を保存
+                          </button>
+                          <button onClick={() => deleteSession(s.id)} style={{ padding: "6px 14px", borderRadius: 999, border: `1px solid ${INK.player}`, background: "transparent", color: INK.player, fontSize: 13, cursor: "pointer" }}>この記録を削除</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })
+            )}
+          </div>
+
+          {/* system info */}
+          <div style={{ margin: "0 16px 8px", textAlign: "center" }}>
+            <div style={{ fontSize: 12, color: INK.brassDim, fontFamily: "'JetBrains Mono', monospace" }}>
+              罫線帳 v{APP_VERSION} ({APP_VERSION_DATE})
+            </div>
+            {meta && meta.sheetName && (
+              <div style={{ fontSize: 12, color: INK.brassDim, marginTop: 2 }}>
+                📊 {meta.sheetName}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+if (window._brbBootTimer) clearTimeout(window._brbBootTimer);
+</script>
+</body>
+</html>
