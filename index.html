@@ -92,11 +92,18 @@ function computeBigRoad(history, settings) {
   let col = -1, row = -1, lastType = null, started = false, maxCol = -1;
   for (const h of history) {
     const outcome = outcomeFor(h, settings).result;
-    if (!started) { col = 0; row = 0; started = true; }
-    else if (h.type === lastType) { if (row + 1 < MAX_ROWS) row += 1; else col += 1; }
-    else { col += 1; row = 0; }
+    if (!started) {
+      col = 0; row = 0; started = true;
+    } else if (h.type === "T") {
+      // タイは列を変えず、直前の結果の続きとして同じ列の下に入る
+      if (row + 1 < MAX_ROWS) row += 1; else col += 1;
+    } else if (h.type === lastType) {
+      if (row + 1 < MAX_ROWS) row += 1; else col += 1;
+    } else {
+      col += 1; row = 0;
+    }
     cells[`${col}-${row}`] = { type: h.type, banker6: h.banker6, outcome };
-    lastType = h.type;
+    if (h.type !== "T") lastType = h.type; // タイは「直前の種類」を更新しない
     if (col > maxCol) maxCol = col;
   }
   return { cells, cols: maxCol + 1 };
