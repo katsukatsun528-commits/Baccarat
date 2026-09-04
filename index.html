@@ -520,75 +520,95 @@ function BetHistoryPanel({ history, settings, unit, fmtTime }) {
   );
 }
 
-function EditablePastHistory({ sessionId, history, settings, unit, fmtTime, onUpdate, onDelete }) {
-  const [editIndex, setEditIndex] = useState(null);
+function EditablePastHistory({ sessionId, history, settings, unit, fmtTime, onUpdate, onDelete, onAdd }) {
+  const [editIndex, setEditIndex] = useState(null); // number = editing existing, "new" = adding
   const [draft, setDraft] = useState(null);
-  if (history.length === 0) {
-    return <div style={{ padding: "16px 10px", textAlign: "center", color: INK.brassDim, fontSize: 15 }}>記録がありません</div>;
-  }
   const rows = history.map((h, i) => ({ h, i })).slice().reverse();
   const sideColorOf = (bet) => (bet === "B" ? INK.banker : bet === "P" ? INK.player : INK.creamDim);
   const startEdit = (i, h) => { setEditIndex(i); setDraft({ ...h }); };
+  const startAdd = () => {
+    const lastTs = history.length ? history[history.length - 1].ts : Date.now();
+    setEditIndex("new");
+    setDraft({ type: "B", banker6: false, bet: null, betAmount: null, ts: lastTs + 1000 });
+  };
   const cancelEdit = () => { setEditIndex(null); setDraft(null); };
   const saveEdit = () => {
-    onUpdate(sessionId, editIndex, draft);
+    if (editIndex === "new") onAdd(sessionId, draft);
+    else onUpdate(sessionId, editIndex, draft);
     setEditIndex(null);
     setDraft(null);
   };
+
+  const renderDraftForm = (label, keyId) => (
+    <div key={keyId} style={{ padding: "10px 12px", borderBottom: `1px solid ${INK.paperShadow}`, background: "rgba(201,162,39,0.08)" }}>
+      <div style={{ fontSize: 12, color: "#777", marginBottom: 6 }}>{label}</div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
+        <span style={{ fontSize: 12, color: "#777", alignSelf: "center", marginRight: 2 }}>結果</span>
+        {["B", "T", "P"].map((t) => (
+          <button key={t} onClick={() => setDraft((d) => ({ ...d, type: t, banker6: t === "B" ? d.banker6 : false }))} style={{ flex: 1, padding: "6px 0", borderRadius: 6, border: `1px solid ${t === "B" ? INK.banker : t === "P" ? INK.player : INK.tie}`, background: draft.type === t ? (t === "B" ? INK.banker : t === "P" ? INK.player : INK.tie) : "transparent", color: draft.type === t ? "#fff" : (t === "B" ? INK.banker : t === "P" ? INK.player : INK.tie), fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{t}</button>
+        ))}
+        {draft.type === "B" && (
+          <button onClick={() => setDraft((d) => ({ ...d, banker6: !d.banker6 }))} style={{ flex: "0 0 44px", padding: "6px 0", borderRadius: 6, border: `1px solid ${INK.brass}`, background: draft.banker6 ? INK.brass : "transparent", color: draft.banker6 ? INK.feltDark : INK.brass, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>⑥</button>
+        )}
+      </div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 8, alignItems: "center" }}>
+        <span style={{ fontSize: 12, color: "#777", marginRight: 2 }}>賭け</span>
+        {[null, "B", "P"].map((b) => (
+          <button key={String(b)} onClick={() => setDraft((d) => ({ ...d, bet: b, betAmount: b ? (d.betAmount || 10000) : null }))} style={{ flex: 1, padding: "6px 0", borderRadius: 6, border: `1px solid ${b ? sideColorOf(b) : INK.creamDim}`, background: draft.bet === b ? (b ? sideColorOf(b) : INK.creamDim) : "transparent", color: draft.bet === b ? "#fff" : (b ? sideColorOf(b) : "#777"), fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{b || "見送り"}</button>
+        ))}
+      </div>
+      {draft.bet && (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 8 }}>
+          <button onClick={() => setDraft((d) => ({ ...d, betAmount: Math.max(1, (d.betAmount || 0) - (settings.currency === "JPY" ? 1000 : settings.currency === "USD" ? 10 : 10000)) }))} style={{ width: 28, height: 28, borderRadius: "50%", border: "1px solid #999", background: "transparent", color: "#555", fontSize: 16, cursor: "pointer" }}>−</button>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, fontWeight: 700, color: "#333" }}>{(draft.betAmount || 0).toLocaleString()}{unit}</span>
+          <button onClick={() => setDraft((d) => ({ ...d, betAmount: (d.betAmount || 0) + (settings.currency === "JPY" ? 1000 : settings.currency === "USD" ? 10 : 10000) }))} style={{ width: 28, height: 28, borderRadius: "50%", border: "1px solid #999", background: "transparent", color: "#555", fontSize: 16, cursor: "pointer" }}>＋</button>
+        </div>
+      )}
+      <div style={{ display: "flex", gap: 8 }}>
+        <button onClick={saveEdit} style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "none", background: INK.brass, color: INK.feltDark, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>保存</button>
+        <button onClick={cancelEdit} style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "1px solid #999", background: "transparent", color: "#666", fontSize: 13, cursor: "pointer" }}>キャンセル</button>
+        {editIndex !== "new" && (
+          <button onClick={() => { onDelete(sessionId, editIndex); cancelEdit(); }} style={{ flex: "0 0 70px", padding: "7px 0", borderRadius: 6, border: `1px solid ${INK.player}`, background: "transparent", color: INK.player, fontSize: 13, cursor: "pointer" }}>削除</button>
+        )}
+      </div>
+    </div>
+  );
+
   return (
-    <div style={{ background: INK.paper, borderRadius: 8, maxHeight: 400, overflowY: "auto" }}>
-      {rows.map(({ h, i }, displayIdx) => {
-        const idx = history.length - displayIdx;
-        const isEditing = editIndex === i;
-        const o = outcomeFor(h, settings);
-        const resultLabel = o.result === "win" ? "的中" : o.result === "lose" ? "外れ" : o.result === "push" ? "引分" : "—";
-        const resultColor = o.result === "win" ? INK.win : o.result === "lose" ? INK.banker : "#888";
-        if (!isEditing) {
-          return (
-            <div key={i} onClick={() => startEdit(i, h)} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "6px 12px", borderBottom: `1px solid ${INK.paperShadow}`, gap: 8, cursor: "pointer" }}>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#999", width: 26, flexShrink: 0 }}>#{idx}</span>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#999", width: 44, flexShrink: 0 }}>{fmtTime(h.ts)}</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: h.type === "B" ? INK.banker : h.type === "P" ? INK.player : INK.tie, width: 26, flexShrink: 0 }}>{h.type}{h.banker6 ? "⑥" : ""}</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: sideColorOf(h.bet), width: 16, textAlign: "center", flexShrink: 0 }}>{h.bet || "-"}</span>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#555", minWidth: 60, textAlign: "right" }}>{h.betAmount ? h.betAmount.toLocaleString() : "-"}</span>
-              <span style={{ fontSize: 12, fontWeight: 700, color: resultColor, width: 34, textAlign: "center", flexShrink: 0 }}>{resultLabel}</span>
-              <span style={{ fontSize: 14, color: INK.brassDim, flexShrink: 0 }}>✏️</span>
-            </div>
-          );
-        }
-        return (
-          <div key={i} style={{ padding: "10px 12px", borderBottom: `1px solid ${INK.paperShadow}`, background: "rgba(201,162,39,0.08)" }}>
-            <div style={{ fontSize: 12, color: "#777", marginBottom: 6 }}>#{idx} を編集</div>
-            <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
-              <span style={{ fontSize: 12, color: "#777", alignSelf: "center", marginRight: 2 }}>結果</span>
-              {["B", "T", "P"].map((t) => (
-                <button key={t} onClick={() => setDraft((d) => ({ ...d, type: t, banker6: t === "B" ? d.banker6 : false }))} style={{ flex: 1, padding: "6px 0", borderRadius: 6, border: `1px solid ${t === "B" ? INK.banker : t === "P" ? INK.player : INK.tie}`, background: draft.type === t ? (t === "B" ? INK.banker : t === "P" ? INK.player : INK.tie) : "transparent", color: draft.type === t ? "#fff" : (t === "B" ? INK.banker : t === "P" ? INK.player : INK.tie), fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{t}</button>
-              ))}
-              {draft.type === "B" && (
-                <button onClick={() => setDraft((d) => ({ ...d, banker6: !d.banker6 }))} style={{ flex: "0 0 44px", padding: "6px 0", borderRadius: 6, border: `1px solid ${INK.brass}`, background: draft.banker6 ? INK.brass : "transparent", color: draft.banker6 ? INK.feltDark : INK.brass, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>⑥</button>
-              )}
-            </div>
-            <div style={{ display: "flex", gap: 6, marginBottom: 8, alignItems: "center" }}>
-              <span style={{ fontSize: 12, color: "#777", marginRight: 2 }}>賭け</span>
-              {[null, "B", "P"].map((b) => (
-                <button key={String(b)} onClick={() => setDraft((d) => ({ ...d, bet: b, betAmount: b ? (d.betAmount || 10000) : null }))} style={{ flex: 1, padding: "6px 0", borderRadius: 6, border: `1px solid ${b ? sideColorOf(b) : INK.creamDim}`, background: draft.bet === b ? (b ? sideColorOf(b) : INK.creamDim) : "transparent", color: draft.bet === b ? "#fff" : (b ? sideColorOf(b) : "#777"), fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{b || "見送り"}</button>
-              ))}
-            </div>
-            {draft.bet && (
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 8 }}>
-                <button onClick={() => setDraft((d) => ({ ...d, betAmount: Math.max(1, (d.betAmount || 0) - (settings.currency === "JPY" ? 1000 : settings.currency === "USD" ? 10 : 10000)) }))} style={{ width: 28, height: 28, borderRadius: "50%", border: "1px solid #999", background: "transparent", color: "#555", fontSize: 16, cursor: "pointer" }}>−</button>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, fontWeight: 700, color: "#333" }}>{(draft.betAmount || 0).toLocaleString()}{unit}</span>
-                <button onClick={() => setDraft((d) => ({ ...d, betAmount: (d.betAmount || 0) + (settings.currency === "JPY" ? 1000 : settings.currency === "USD" ? 10 : 10000) }))} style={{ width: 28, height: 28, borderRadius: "50%", border: "1px solid #999", background: "transparent", color: "#555", fontSize: 16, cursor: "pointer" }}>＋</button>
-              </div>
-            )}
-            <div style={{ display: "flex", gap: 8 }}>
-              <button onClick={saveEdit} style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "none", background: INK.brass, color: INK.feltDark, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>保存</button>
-              <button onClick={cancelEdit} style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "1px solid #999", background: "transparent", color: "#666", fontSize: 13, cursor: "pointer" }}>キャンセル</button>
-              <button onClick={() => { onDelete(sessionId, i); cancelEdit(); }} style={{ flex: "0 0 70px", padding: "7px 0", borderRadius: 6, border: `1px solid ${INK.player}`, background: "transparent", color: INK.player, fontSize: 13, cursor: "pointer" }}>削除</button>
-            </div>
-          </div>
-        );
-      })}
+    <div>
+      <div style={{ background: INK.paper, borderRadius: "8px 8px 0 0", maxHeight: 400, overflowY: "auto" }}>
+        {editIndex === "new" && renderDraftForm("新しい局を追加(末尾に追加されます)", "new-entry")}
+        {history.length === 0 && editIndex !== "new" ? (
+          <div style={{ padding: "16px 10px", textAlign: "center", color: INK.brassDim, fontSize: 15 }}>記録がありません</div>
+        ) : (
+          rows.map(({ h, i }, displayIdx) => {
+            const idx = history.length - displayIdx;
+            const isEditing = editIndex === i;
+            const o = outcomeFor(h, settings);
+            const resultLabel = o.result === "win" ? "的中" : o.result === "lose" ? "外れ" : o.result === "push" ? "引分" : "—";
+            const resultColor = o.result === "win" ? INK.win : o.result === "lose" ? INK.banker : "#888";
+            if (!isEditing) {
+              return (
+                <div key={i} onClick={() => startEdit(i, h)} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "6px 12px", borderBottom: `1px solid ${INK.paperShadow}`, gap: 8, cursor: "pointer" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#999", width: 26, flexShrink: 0 }}>#{idx}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#999", width: 44, flexShrink: 0 }}>{fmtTime(h.ts)}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: h.type === "B" ? INK.banker : h.type === "P" ? INK.player : INK.tie, width: 26, flexShrink: 0 }}>{h.type}{h.banker6 ? "⑥" : ""}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: sideColorOf(h.bet), width: 16, textAlign: "center", flexShrink: 0 }}>{h.bet || "-"}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#555", minWidth: 60, textAlign: "right" }}>{h.betAmount ? h.betAmount.toLocaleString() : "-"}</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: resultColor, width: 34, textAlign: "center", flexShrink: 0 }}>{resultLabel}</span>
+                  <span style={{ fontSize: 14, color: INK.brassDim, flexShrink: 0 }}>✏️</span>
+                </div>
+              );
+            }
+            return renderDraftForm(`#${idx} を編集`, i);
+          })
+        )}
+      </div>
+      {editIndex !== "new" && (
+        <button onClick={startAdd} style={{ width: "100%", padding: "9px 0", borderRadius: "0 0 8px 8px", border: `1px solid ${INK.brass}`, borderTop: "none", background: "rgba(201,162,39,0.10)", color: INK.brass, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
+          ＋ 局を追加
+        </button>
+      )}
     </div>
   );
 }
@@ -814,6 +834,13 @@ function App() {
       if (s.id !== sessionId) return s;
       const hist = s.history.slice();
       hist.splice(index, 1);
+      return { ...s, history: hist, ...recomputeSessionFields(hist, s.settings) };
+    }));
+  };
+  const addPastSessionEntry = (sessionId, newEntry) => {
+    setSessions((prev) => prev.map((s) => {
+      if (s.id !== sessionId) return s;
+      const hist = s.history.concat([newEntry]);
       return { ...s, history: hist, ...recomputeSessionFields(hist, s.settings) };
     }));
   };
@@ -1407,7 +1434,7 @@ function App() {
                             </button>
                           </div>
                           {editingHistorySessionId === s.id ? (
-                            <EditablePastHistory sessionId={s.id} history={s.history} settings={s.settings} unit={sUnit} fmtTime={fmtTime} onUpdate={updatePastSessionEntry} onDelete={deletePastSessionEntry} />
+                            <EditablePastHistory sessionId={s.id} history={s.history} settings={s.settings} unit={sUnit} fmtTime={fmtTime} onUpdate={updatePastSessionEntry} onDelete={deletePastSessionEntry} onAdd={addPastSessionEntry} />
                           ) : (
                             <BetHistoryPanel history={s.history} settings={s.settings} unit={sUnit} fmtTime={fmtTime} />
                           )}
